@@ -1,0 +1,21 @@
+{
+  "Zombie Eye": {
+    "ItemCategory": "Materal",
+    "StackSize": 99,
+    "Description": "Special zombie eye."
+  },
+  "Medkit": {
+    "ItemCategory": "Consumable",
+    "AddHealth": 25,
+    "Hungry": 0,
+    "StackSize": 99,
+    "Description": "It smells like medicine."
+  },
+  "9mm": {
+    "ItemCategory": "pistol",
+    "ItemAttack": 20,
+    "ItemSpeed": 0.75, 
+    "StackSize": 1,
+    "Description": "Regular pistol."
+  }
+}

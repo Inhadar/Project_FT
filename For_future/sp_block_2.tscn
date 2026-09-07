@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Inventory_prototype/Item_icons/SandStoneblock_2.png" type="Texture" id=1]
+[ext_resource path="res://For_future/sp_block.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 16 )
+
+[node name="sp_roof" type="RigidBody2D" groups=["2"]]
+collision_layer = 4
+collision_mask = 7
+input_pickable = true
+mode = 2
+gravity_scale = 10.0
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( 16, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 16, 0 )
+shape = SubResource( 1 )
+
+[node name="cast" type="Node2D" parent="."]
+position = Vector2( 16, 0 )
+
+[node name="right" type="RayCast2D" parent="cast"]
+position = Vector2( 33, 0 )
+rotation = -1.57079
+enabled = true
+cast_to = Vector2( 0, 1 )
+collision_mask = 7
+
+[node name="left" type="RayCast2D" parent="cast"]
+position = Vector2( -33, 0 )
+rotation = -4.71238
+enabled = true
+cast_to = Vector2( 0, 1 )
+collision_mask = 7
+
+[node name="down" type="RayCast2D" parent="cast"]
+position = Vector2( 0, 17 )
+rotation = -6.28318
+scale = Vector2( 60, 1 )
+enabled = true
+cast_to = Vector2( 0, 1 )
+collision_mask = 7
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 16, 0 )
+scale = Vector2( 3.2, 1.6 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

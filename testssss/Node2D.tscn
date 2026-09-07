@@ -1,0 +1,128 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://For_future/sp_block_1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://For_future/block.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 150, 52 )
+
+[node name="block" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 39 )
+script = null
+
+[node name="block2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 351, 39 )
+script = null
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2( 16, 2 )
+node_a = NodePath("sp_block")
+node_b = NodePath("sp_block2")
+softness = 1.0
+
+[node name="sp_block" parent="PinJoint2D" instance=ExtResource( 1 )]
+position = Vector2( -16, -2 )
+gravity_scale = 1.0
+script = null
+
+[node name="sp_block2" parent="PinJoint2D" instance=ExtResource( 1 )]
+position = Vector2( 16, -2 )
+gravity_scale = 1.0
+script = null
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2( 80, 2 )
+node_a = NodePath("sp_block")
+node_b = NodePath("sp_block2")
+softness = 1.0
+
+[node name="sp_block" parent="PinJoint2D2" instance=ExtResource( 1 )]
+position = Vector2( -16, -2 )
+gravity_scale = 1.0
+script = null
+
+[node name="sp_block2" parent="PinJoint2D2" instance=ExtResource( 1 )]
+position = Vector2( 16, -2 )
+gravity_scale = 1.0
+script = null
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="."]
+position = Vector2( 144, 2 )
+node_a = NodePath("sp_block")
+node_b = NodePath("sp_block2")
+softness = 1.0
+
+[node name="sp_block" parent="PinJoint2D3" instance=ExtResource( 1 )]
+position = Vector2( -16, -2 )
+gravity_scale = 1.0
+script = null
+
+[node name="sp_block2" parent="PinJoint2D3" instance=ExtResource( 1 )]
+position = Vector2( 16, -2 )
+gravity_scale = 1.0
+script = null
+
+[node name="PinJoint2D4" type="PinJoint2D" parent="."]
+position = Vector2( 208, 2 )
+node_a = NodePath("sp_block")
+node_b = NodePath("sp_block2")
+softness = 1.0
+
+[node name="sp_block" parent="PinJoint2D4" instance=ExtResource( 1 )]
+position = Vector2( -16, -2 )
+gravity_scale = 1.0
+script = null
+
+[node name="sp_block2" parent="PinJoint2D4" instance=ExtResource( 1 )]
+position = Vector2( 16, -2 )
+gravity_scale = 1.0
+script = null
+
+[node name="PinJoint2D5" type="PinJoint2D" parent="."]
+position = Vector2( 272, 2 )
+node_a = NodePath("sp_block")
+node_b = NodePath("sp_block2")
+softness = 1.0
+
+[node name="sp_block" parent="PinJoint2D5" instance=ExtResource( 1 )]
+position = Vector2( -16, -2 )
+gravity_scale = 1.0
+script = null
+
+[node name="sp_block2" parent="PinJoint2D5" instance=ExtResource( 1 )]
+position = Vector2( 16, -2 )
+gravity_scale = 1.0
+script = null
+
+[node name="PinJoint2D6" type="PinJoint2D" parent="."]
+position = Vector2( 336, 2 )
+node_a = NodePath("sp_block")
+node_b = NodePath("sp_block2")
+softness = 1.0
+
+[node name="sp_block" parent="PinJoint2D6" instance=ExtResource( 1 )]
+position = Vector2( -16, -2 )
+gravity_scale = 1.0
+script = null
+
+[node name="sp_block2" parent="PinJoint2D6" instance=ExtResource( 1 )]
+position = Vector2( 16, -2 )
+gravity_scale = 1.0
+script = null
+
+[node name="PinJoint2D7" type="PinJoint2D" parent="."]
+position = Vector2( 47, 1 )
+node_a = NodePath("../PinJoint2D")
+node_b = NodePath("../PinJoint2D2")
+
+[node name="PinJoint2D8" type="PinJoint2D" parent="."]
+position = Vector2( 112, 2 )
+
+[node name="PinJoint2D9" type="PinJoint2D" parent="."]
+position = Vector2( 177, 2 )
+
+[node name="PinJoint2D10" type="PinJoint2D" parent="."]
+position = Vector2( 239, 2 )
+
+[node name="PinJoint2D11" type="PinJoint2D" parent="."]
+position = Vector2( 304, 2 )

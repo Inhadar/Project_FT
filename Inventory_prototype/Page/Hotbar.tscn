@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Inventory_prototype/Buttons/Sb_pressed.png" type="Texture" id=1]
+[ext_resource path="res://Inventory_prototype/Page/Slot.gd" type="Script" id=2]
+[ext_resource path="res://Inventory_prototype/Page/Hotbar.gd" type="Script" id=3]
+[ext_resource path="res://Fonts/Dosis-Medium.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 400, 400 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[node name="Hotbar" type="Control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_top = -73.6958
+margin_bottom = -73.6958
+rect_scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -96.0
+margin_top = -1.0
+margin_right = 95.0
+margin_bottom = 38.0
+
+[node name="HotbarSlots" type="GridContainer" parent="."]
+margin_left = -88.0
+margin_top = 2.0
+margin_right = 88.0
+margin_bottom = 34.0
+columns = 5
+
+[node name="slot1" type="Panel" parent="HotbarSlots"]
+margin_right = 32.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="slot2" type="Panel" parent="HotbarSlots"]
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="slot3" type="Panel" parent="HotbarSlots"]
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="slot4" type="Panel" parent="HotbarSlots"]
+margin_left = 108.0
+margin_right = 140.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="slot5" type="Panel" parent="HotbarSlots"]
+margin_left = 144.0
+margin_right = 176.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -95.0
+margin_top = -20.0
+margin_right = 853.0
+margin_bottom = 62.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 2 )
+text = "adadadfafafaf"
+align = 1
+valign = 1

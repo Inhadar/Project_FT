@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://1pixel.png" type="Texture" id=1]
+[ext_resource path="res://Effects/Shoot_fire/Shoot_fire.gd" type="Script" id=2]
+
+[node name="Shoot_fire" type="Sprite"]
+scale = Vector2( 200, 1 )
+texture = ExtResource( 1 )
+centered = false
+script = ExtResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

@@ -1,0 +1,126 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Worlds/World2.gd" type="Script" id=1]
+[ext_resource path="res://cursor1.png" type="Texture" id=4]
+[ext_resource path="res://Worlds/Cursor.gd" type="Script" id=7]
+
+[node name="World2" type="Node"]
+script = ExtResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
+margin_left = 889.0
+margin_top = 83.0
+margin_right = 998.0
+margin_bottom = 241.0
+columns = 2
+
+[node name="Pistol" type="Button" parent="CanvasLayer/GridContainer"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+text = "pistol"
+
+[node name="AssaultRifle" type="Button" parent="CanvasLayer/GridContainer"]
+margin_left = 54.0
+margin_right = 109.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+text = "Asrifle"
+
+[node name="Revolver" type="Button" parent="CanvasLayer/GridContainer"]
+margin_top = 54.0
+margin_right = 50.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 50, 50 )
+text = "Revol"
+
+[node name="Revolver2" type="Button" parent="CanvasLayer/GridContainer"]
+margin_left = 54.0
+margin_top = 54.0
+margin_right = 109.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 50, 50 )
+text = "Revol2"
+
+[node name="Shotgun" type="Button" parent="CanvasLayer/GridContainer"]
+margin_top = 108.0
+margin_right = 50.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 50, 50 )
+text = "Shot"
+
+[node name="Shotgun2" type="Button" parent="CanvasLayer/GridContainer"]
+margin_left = 54.0
+margin_top = 108.0
+margin_right = 109.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 50, 50 )
+text = "shot2"
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+margin_left = 885.0
+margin_top = 18.0
+margin_right = 1000.0
+margin_bottom = 71.0
+text = "RESTART"
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 17.0
+margin_top = 20.0
+margin_right = 45.0
+margin_bottom = 34.0
+rect_scale = Vector2( 2, 2 )
+text = "aaaa"
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+margin_left = 17.0
+margin_top = 60.0
+margin_right = 45.0
+margin_bottom = 74.0
+rect_scale = Vector2( 2, 2 )
+text = "aaaa"
+
+[node name="Label3" type="Label" parent="CanvasLayer"]
+margin_left = 17.0
+margin_top = 103.0
+margin_right = 45.0
+margin_bottom = 117.0
+rect_scale = Vector2( 2, 2 )
+text = "aaaa"
+
+[node name="Cursor" type="Node2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Cursor"]
+position = Vector2( -16, -16 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="cast_base" type="Node2D" parent="Cursor"]
+
+[node name="down" type="RayCast2D" parent="Cursor/cast_base"]
+enabled = true
+cast_to = Vector2( 0, 21 )
+collision_mask = 6
+
+[node name="left" type="RayCast2D" parent="Cursor/cast_base"]
+rotation = 1.57079
+enabled = true
+cast_to = Vector2( 0, 21 )
+collision_mask = 6
+
+[node name="up" type="RayCast2D" parent="Cursor/cast_base"]
+rotation = 3.14159
+enabled = true
+cast_to = Vector2( 0, 21 )
+collision_mask = 6
+
+[node name="right" type="RayCast2D" parent="Cursor/cast_base"]
+rotation = 4.71238
+enabled = true
+cast_to = Vector2( 0, 21 )
+collision_mask = 6
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_Button_pressed"]

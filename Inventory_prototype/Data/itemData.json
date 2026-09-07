@@ -1,0 +1,114 @@
+{
+  "Zombie Eye": {
+    "ItemCategory": "Materal",
+    "StackSize": 99,
+    "Description": "Special zombie eye."
+  },
+  "Medkit": {
+    "ItemCategory": "Consumable",
+    "AddHealth": 25,
+    "StackSize": 99,
+    "Description": "It smells like medicine."
+  },
+
+  "9mm": {
+    "ItemCategory": "Pistol",
+    "ShootType" : "normal",
+    "ItemAttack": 20,
+    "ItemSpeed": 0.75, 
+    "StackSize": 1,
+    "Description": "Regular pistol."
+  },
+
+  "Shotgun": {
+    "ItemCategory": "Riffle",
+    "WeaponType": "Shotgun",
+    "ShootType" : "normal",
+    "ItemAttack": 50,
+    "ItemSpeed": 0.75, 
+    "StackSize": 1,
+    "Description": "regular shotgun riffle."
+  },
+
+  "Revolver": {
+    "ItemCategory": "Pistol",
+    "ShootType" : "heavy",
+    "ItemAttack": 50,
+    "ItemSpeed": 0.75, 
+    "StackSize": 1,
+    "Description": "regular heavy pistol."
+  },
+
+  "Plasmasword": {
+    "ItemCategory": "Melee",
+    "ShootType" : "normal",
+    "ItemAttack": 100,
+    "ItemSpeed": 0.75, 
+    "StackSize": 1,
+    "Description": "strong melee weapon."
+  },
+  "Pipe": {
+    "ItemCategory": "Melee",
+    "ShootType" : "normal",
+    "ItemAttack": 50,
+    "ItemSpeed": 0.75, 
+    "StackSize": 1,
+    "Description": "weakest melee weapon."
+  },
+  "Ak12": {
+    "ItemCategory": "Riffle",
+    "ShootType" : "normal",
+    "ItemAttack": 50,
+    "ItemSpeed": 0.75, 
+    "StackSize": 1,
+    "Description": "weakest melee weapon."
+  },
+  "SandStoneblock_1": {
+    "ItemCategory": "Block",
+    "BlockType" : "normal",
+    "BlockHealt": 50,
+    "BlockSize" : 1,
+    "StackSize": 99,
+    "Description": "weakest block you can use in building and defanse."
+  },
+  "Metalblock_1": {
+    "ItemCategory": "Block",
+    "BlockType" : "normal",
+    "BlockHealt": 100,
+    "BlockSize" : 1,
+    "StackSize": 99,
+    "Description": "strong block you can use in building and defanse."
+  },
+  "ThornPlantblock_1": {
+    "ItemCategory": "Block",
+    "BlockType" : "Special",
+    "BlockHealt": 50,
+    "BlockSize" : 1,
+    "StackSize": 99,
+    "Description": "special block you can use in building and defanse."
+  },
+  "SandStoneblock_2": {
+    "ItemCategory": "Block",
+    "BlockType" : "normal",
+    "BlockHealt": 50,
+    "BlockSize" : 2,
+    "StackSize": 99,
+    "Description": "weakest block you can use in building and defanse."
+  },
+  "Metalblock_2": {
+    "ItemCategory": "Block",
+    "BlockType" : "normal",
+    "BlockHealt": 100,
+    "BlockSize" : 2,
+    "StackSize": 99,
+    "Description": "strong block you can use in building and defanse."
+  },
+  "ThornPlantblock_2": {
+    "ItemCategory": "Block",
+    "BlockType" : "Special",
+    "BlockHealt": 50,
+    "BlockSize" : 2,
+    "StackSize": 99,
+    "Description": "special block you can use in building and defanse."
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "Zombie Eye": {
+    "ItemCategory": "Materal",
+    "StackSize": 99,
+    "Description": "Special zombie eye."
+  },
+  "Medkit": {
+    "ItemCategory": "Consumable",
+    "AddHealth": 25,
+    "Hungry": 0,
+    "StackSize": 99,
+    "Description": "It smells like medicine."
+  },
+
+  "9mm": {
+    "ItemCategory": "Pistol",
+    "ItemAttack": 20,
+    "ItemSpeed": 0.75, 
+    "StackSize": 1,
+    "Description": "Regular pistol."
+  },
+
+  "Shotgun": {
+    "ItemCategory": "Shotgun",
+    "ItemAttack": 50,
+    "ItemSpeed": 0.75, 
+    "StackSize": 1,
+    "Description": "regular shotgun riffle."
+  },
+
+  "Revolver": {
+    "ItemCategory": "Pistol",
+    "ItemAttack": 50,
+    "ItemSpeed": 0.75, 
+    "StackSize": 1,
+    "Description": "regular heavy pistol."
+  },
+
+  "Wrench": {
+    "ItemCategory": "Melee",
+    "ItemAttack": 50,
+    "ItemSpeed": 0.75, 
+    "StackSize": 1,
+    "Description": "weakest melee weapon."
+  }
+}

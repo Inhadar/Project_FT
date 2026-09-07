@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Zombies/1_test1-Sheet.png" type="Texture" id=1]
+[ext_resource path="res://Zombie_tscn/Enemy_nzombie.gd" type="Script" id=2]
+
+[sub_resource type="Shader" id=4]
+code = "shader_type canvas_item;
+
+
+uniform vec4 flash_color : hint_color = vec4(1.0);
+uniform float flash_modifer: hint_range(0.0, 1.0) = 0.0;
+
+void fragment()
+{
+	vec4 color = texture(TEXTURE,UV);
+	color.rgb = mix(color.rgb,flash_color.rgb,flash_modifer);                            
+	COLOR = color;
+	
+}"
+
+[sub_resource type="ShaderMaterial" id=5]
+resource_local_to_scene = true
+shader = SubResource( 4 )
+shader_param/flash_color = Color( 1, 1, 1, 1 )
+shader_param/flash_modifer = 0.0
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 45.75 )
+
+[node name="Enemy_nzombie" type="KinematicBody2D" groups=["Enemy", "zombie"]]
+collision_layer = 4
+collision_mask = 14
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 5 )
+position = Vector2( 11, 0.5 )
+texture = ExtResource( 1 )
+offset = Vector2( -10, -0.5 )
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 8.5, 0.75 )
+shape = SubResource( 3 )
+
+[node name="raycasts" type="Node2D" parent="."]
+position = Vector2( 8.5, 9 )
+
+[node name="vertical" type="Node2D" parent="raycasts"]
+position = Vector2( -1.5, 44 )
+
+[node name="down_center" type="RayCast2D" parent="raycasts/vertical"]
+position = Vector2( 0, -6 )
+enabled = true
+cast_to = Vector2( 0, 5 )
+collision_mask = 15
+
+[node name="down_side" type="RayCast2D" parent="raycasts/vertical"]
+position = Vector2( 15.5, -22.5 )
+enabled = true
+cast_to = Vector2( 0, 16 )
+collision_mask = 6
+
+[node name="horizontal" type="Node2D" parent="raycasts"]
+position = Vector2( 19, 9 )
+
+[node name="head" type="RayCast2D" parent="raycasts/horizontal"]
+position = Vector2( -8.5, -38.5 )
+enabled = true
+cast_to = Vector2( 7, 0 )
+collision_mask = 15
+
+[node name="center" type="RayCast2D" parent="raycasts/horizontal"]
+position = Vector2( -8.5, -8.5 )
+enabled = true
+cast_to = Vector2( 7, 0 )
+collision_mask = 15
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 9, 1.5 )
+
+[node name="Destroy_Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="Dead" type="Timer" parent="."]
+one_shot = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = -11.0
+margin_top = -63.5
+margin_right = 29.0
+margin_bottom = -49.5
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="timeout" from="Destroy_Timer" to="." method="_on_Destroy_Timer_timeout"]
+[connection signal="timeout" from="Dead" to="." method="_on_Dead_timeout"]
